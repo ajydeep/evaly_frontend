@@ -19,7 +19,7 @@ export default function ExamModePage() {
   // Answers stored locally until submit
   const [answers, setAnswers] = useState<Record<string, { selectedOptionIds: string[]; natResponse?: number; isSkipped: boolean }>>({})
 
-  const startTimeRef     = useRef<number>(Date.now())
+  const _startTimeRef = useRef<number>(Date.now())
   const questionStartRef = useRef<number>(Date.now())
   const timerRef         = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -64,7 +64,7 @@ export default function ExamModePage() {
   const timerColor = timeLeft < 300 ? 'text-red-500' : timeLeft < 600 ? 'text-amber-500' : 'text-ink-900'
 
   // Save current response to local state when navigating
-  const saveCurrentResponse = useCallback((sqId: string, opts: string[], nat?: number) => {
+  const _saveCurrentResponse = useCallback((sqId: string, opts: string[], nat?: number) => {
     setAnswers(prev => ({
       ...prev,
       [sqId]: { selectedOptionIds: opts, natResponse: nat, isSkipped: false }
@@ -93,7 +93,7 @@ export default function ExamModePage() {
     setCurrentIndex(newIndex)
   }
 
-  const handleFinalSubmit = async (isAutoSubmit = false) => {
+  const handleFinalSubmit = async (_isAutoSubmit = false) => {
     if (!session) return
     clearInterval(timerRef.current!)
     setSubmitting(true)

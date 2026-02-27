@@ -29,7 +29,7 @@ export default function ResultsPage() {
   }
 
   const questions = session.sessionQuestions
-  const attempted = questions.filter(sq => sq.attempt && !sq.attempt.isSkipped)
+  const _attempted = questions.filter(sq => sq.attempt && !sq.attempt.isSkipped)
   const correct   = questions.filter(sq => sq.attempt?.isCorrect === true)
   const wrong     = questions.filter(sq => sq.attempt?.isCorrect === false && !sq.attempt?.isSkipped)
   const skipped   = questions.filter(sq => !sq.attempt || sq.attempt.isSkipped)
