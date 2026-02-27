@@ -83,7 +83,9 @@ export default function LoginPage() {
             </button>
           </form>
 
-          {/* Quick fill for demo */}
+
+
+          {/* Quick fill for demo 
           <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-blue-100">
             <p className="text-xs text-blue-500 font-medium mb-2"> Trial </p>
             <button
@@ -94,6 +96,9 @@ export default function LoginPage() {
               Fill
             </button>
           </div>
+          */}
+
+          
         </div>
 
         <p className="text-center text-sm text-ink-400 mt-6">
